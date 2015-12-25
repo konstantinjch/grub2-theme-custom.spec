@@ -1,0 +1,27 @@
+Name:           grub2-theme-custom
+Version:        0
+Release:        1%{?dist}
+Summary:        Custom theme with flag
+
+Group:          Amusements/Graphics
+License:        Proprietary
+Source0:        starfield.tar.bz2
+BuildArch:      noarch
+
+%description
+Custom topic
+
+%prep
+%setup -q -n starfield
+
+%build
+
+%install
+mkdir -p %{buildroot}/boot/grub2/themes/starfield
+cp -r * %{buildroot}/boot/grub2/themes/starfield
+
+%files
+%defattr(-,root,root,-)
+/boot/grub2/themes/starfield/*
+
+%changelog
